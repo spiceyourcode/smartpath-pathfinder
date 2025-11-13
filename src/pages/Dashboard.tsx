@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 import {
   TrendingUp,
   Award,
@@ -16,6 +17,8 @@ import {
 } from "lucide-react";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   return (
     <DashboardLayout>
       <div className="p-4 lg:p-8 space-y-6">
@@ -137,21 +140,33 @@ const Dashboard = () => {
               <CardTitle className="text-lg font-semibold">Quick Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <Button className="w-full justify-start h-auto py-4" variant="outline">
+              <Button 
+                className="w-full justify-start h-auto py-4" 
+                variant="outline"
+                onClick={() => navigate("/reports/upload")}
+              >
                 <Upload className="w-5 h-5 mr-3" />
                 <div className="text-left">
                   <div className="font-semibold">Upload Report</div>
                   <div className="text-xs text-muted-foreground">Add your latest grades</div>
                 </div>
               </Button>
-              <Button className="w-full justify-start h-auto py-4" variant="outline">
+              <Button 
+                className="w-full justify-start h-auto py-4" 
+                variant="outline"
+                onClick={() => navigate("/flashcards/generate")}
+              >
                 <Brain className="w-5 h-5 mr-3" />
                 <div className="text-left">
                   <div className="font-semibold">Generate Flashcards</div>
                   <div className="text-xs text-muted-foreground">Study smarter</div>
                 </div>
               </Button>
-              <Button className="w-full justify-start h-auto py-4" variant="outline">
+              <Button 
+                className="w-full justify-start h-auto py-4" 
+                variant="outline"
+                onClick={() => navigate("/career")}
+              >
                 <Compass className="w-5 h-5 mr-3" />
                 <div className="text-left">
                   <div className="font-semibold">Career Recommendations</div>
