@@ -20,6 +20,10 @@ import Career from "./pages/Career";
 import CareerDetail from "./pages/CareerDetail";
 import CareerQuiz from "./pages/CareerQuiz";
 import StudyPlans from "./pages/StudyPlans";
+import GenerateStudyPlan from "./pages/GenerateStudyPlan";
+import StudyPlanDetail from "./pages/StudyPlanDetail";
+import Insights from "./pages/Insights";
+import InsightDetail from "./pages/InsightDetail";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
@@ -49,6 +53,10 @@ const App = () => (
           <Route path="/career/quiz" element={<CareerQuiz />} />
           <Route path="/career/:id" element={<CareerDetail />} />
           <Route path="/study-plans" element={<StudyPlans />} />
+          <Route path="/study-plans/generate" element={<GenerateStudyPlan />} />
+          <Route path="/study-plans/:id" element={<StudyPlanDetail />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/:id" element={<InsightDetail />} />
           <Route path="/settings" element={<Settings />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
